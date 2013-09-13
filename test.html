@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Stacker Test</title>
+
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #222;
+		}
+
+		#items {
+			top: 0;
+			left: 0;
+			position: absolute;
+			height: 100%;
+		}
+
+		#items div {
+			width: 150px;
+			border: 1px solid black;
+			text-align: center;
+			padding: 20px;
+			margin: 20px;
+			position: absolute;
+			border: 1px solid #aaa;
+		}
+
+		.small {
+			height: 100px;
+			background-color: #777;
+		}
+
+		.medium {
+			height: 250px;
+			background-color: #555;
+		}
+
+		.large {
+			height: 400px;
+			background-color: #333;
+		}
+
+		#buttons {
+			padding: 10px;
+			position: fixed;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="buttons">
+		<button id="small">Toggle small</button>
+		<button id="medium">Toggle medium</button>
+		<button id="large">Toggle medium</button>
+	</div>
+
+	<div id="items">
+		<div class="small">Item 1 (small)</div>
+		<div class="small">Item 2 (small)</div>
+		<div class="medium">Item 3 (medium)</div>
+		<div class="small">Item 4 (small)</div>
+		<div class="medium">Item 5 (medium)</div>
+		<div class="large">Item 6 (large)</div>
+		<div class="small">Item 7 (small)</div>
+		<div class="large">Item 8 (large)</div>
+		<div class="small">Item 9 (small)</div>
+		<div class="medium">Item 10 (medium)</div>
+		<div class="large">Item 11 (large)</div>
+		<div class="large">Item 12 (large)</div>
+		<div class="small">Item 13 (small)</div>
+		<div class="large">Item 14 (large)</div>
+		<div class="large">Item 15 (large)</div>
+		<div class="large">Item 16 (large)</div>
+		<div class="small">Item 17 (small)</div>
+		<div class="medium">Item 18 (medium)</div>
+		<div class="medium">Item 19 (medium)</div>
+		<div class="large">Item 20 (large)</div>
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" charset="utf-8"></script>
+<script>!window.jQuery && document.write('<script src="jquery-2.0.3.min.js"><\/script>');</script>
+<script src="jquery.ba-throttle-debounce.min.js"></script>
+<script src="jquery.stacker.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$('#items div').stacker({
+			container: '#items'
+		});
+	});
+
+	var mediumHidden = false;
+	$('#small').on('click', function() {
+		$('.small').toggle();
+		$('#items div').stacker({
+			container: '#items'
+		});
+	});
+
+	$('#medium').on('click', function() {
+		$('.medium').toggle();
+		$('#items div').stacker({
+			container: '#items'
+		});
+	});
+
+	$('#large').on('click', function() {
+		$('.large').toggle();
+		$('#items div').stacker({
+			container: '#items'
+		});
+	});
+
+</script>
+
+</body>
+</html>
