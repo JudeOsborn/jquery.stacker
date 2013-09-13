@@ -80,15 +80,27 @@
                     $this.attr('data-col', col);
                 }
 
-                $this.css(settings.position, vertPosition + 'px');
-                $this.css('left', left + 'px');
-
+                if (settings.position === 'top') {
+                    $this.css({'transform' : 'translate3d(' + left + 'px, ' + vertPosition + 'px, 0)'});
+                } else {
+                    $this.css({'transform' : 'translate3d(' + left + 'px, -' + vertPosition + 'px, 0)'});
+                }
+                
                 vertPosition += height;
             });
         }
 
         $container = (settings.container === undefined ||
                       settings.container === window) ? $window : $(settings.container);
+
+        // Initial setup.
+        elements.each(function() {
+            $this = $(this);
+
+            $this.css(settings.position, '0');
+            $this.css('position', 'absolute');
+
+        });
 
         // Supports the jQuery throttle/debounce plugin.
         if ($.throttle && settings.throttle > 0) {
