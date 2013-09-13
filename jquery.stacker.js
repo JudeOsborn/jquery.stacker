@@ -14,9 +14,8 @@
  *
  * Usage:
  *  $('div').stacker({
- *     container: $('#some-id'),
- *     position: 'top',
- *     throttle: 400
+ *     container: $('#some-container-id'),
+ *     position: 'top'
  * });
  *
  * Parameters:
