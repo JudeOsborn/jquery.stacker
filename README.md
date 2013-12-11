@@ -1,7 +1,7 @@
 JQuery Stacker
 ==============
 
-A JQuery plugin that stacks DOM elements of the same width vertically in columns, fitting them tothe height of the window or container. DOM elements are essentially wrapped vertically similar to how text is wrapped horizontally.
+A JQuery plugin that stacks DOM elements of the same width vertically in columns, fitting them to the height of the window or container. DOM elements are essentially wrapped vertically similar to how text is wrapped horizontally.
 
 
 Usage
