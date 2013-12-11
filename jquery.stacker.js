@@ -21,7 +21,7 @@
  * Parameters:
  *  container: A jQuery element to use as the conainer. Window is default.
  *  position: Where the objects are anchored. Either "top" or "bottom".
- *  columNUmbers: If true (default), elements are given a data attribute called
+ *  columnNumbers: If true (default), elements are given a data attribute called
  *      "data-col", that that represents the "column" they have been placed from
  *      left to right.
  *     a data attribute called "data-col".
